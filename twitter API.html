@@ -6,29 +6,6 @@
     <title>Twitter API 示例</title>
 </head>
 <body>
-    <h1>最新推文</h1>
-    <div id="fzcfzc456"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-        // 使用 Axios 发送 GET 请求到 Twitter API
-        axios.get('https://api.twitter.com/2/users/username/tweets', {
-            headers: {
-                Authorization: 'Bearer YOUR_TWITTER_API_BEARER_TOKEN'
-            }
-        })
-        .then(response => {
-            // 成功获取到推文数据，将数据展示在页面上
-            const tweets = response.data.data;
-            const tweetsDiv = document.getElementById('tweets');
-            tweets.forEach(tweet => {
-                tweetsDiv.innerHTML += `<p>${tweet.text}</p>`;
-            });
-        })
-        .catch(error => {
-            // 处理错误情况
-            console.error('Error fetching tweets:', error);
-        });
-    </script>
+    <blockquote class="twitter-tweet"><p lang="zh" dir="ltr">线切割、热处理，成遗忘的回忆了，金工实习回不去了 <a href="https://t.co/CrVK0VV8wR">pic.twitter.com/CrVK0VV8wR</a></p>&mdash; 我不姓阿 (@muren_gang) <a href="https://twitter.com/muren_gang/status/1759503841358454801?ref_src=twsrc%5Etfw">February 19, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
