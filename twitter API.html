@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter API 示例</title>
+</head>
+<body>
+    <h1>最新推文</h1>
+    <div id="fzcfzc456"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // 使用 Axios 发送 GET 请求到 Twitter API
+        axios.get('https://api.twitter.com/2/users/username/tweets', {
+            headers: {
+                Authorization: 'Bearer YOUR_TWITTER_API_BEARER_TOKEN'
+            }
+        })
+        .then(response => {
+            // 成功获取到推文数据，将数据展示在页面上
+            const tweets = response.data.data;
+            const tweetsDiv = document.getElementById('tweets');
+            tweets.forEach(tweet => {
+                tweetsDiv.innerHTML += `<p>${tweet.text}</p>`;
+            });
+        })
+        .catch(error => {
+            // 处理错误情况
+            console.error('Error fetching tweets:', error);
+        });
+    </script>
+</body>
+</html>
