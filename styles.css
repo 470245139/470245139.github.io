@@ -1,0 +1,12 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* 将子元素垂直排列 */
+    justify-content: center; /* 垂直居中 */
+    align-items: center; /* 水平居中 */
+    height: 100%; /* 使容器铺满整个页面高度 */
+}
